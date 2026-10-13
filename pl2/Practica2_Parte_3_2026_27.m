@@ -249,7 +249,7 @@ subplot(2,2,4), imshow(open4_close4), title('Apertura + cierre');
 %[text] Se han probado aperturas y cierres con discos de radio 1 a 5 sobre la imagen binarizada. Se puede observar que con r=3 se mantienen algunos elementos que se querrían borrar (objetos pequeños o agujeros, respectivamente en apertura y cierre), pero se mantienen bien los detalles de la huella, mientras que en r=4 se borran mejor todos los objetos que queríamos eliminar, pero se pierden algunos detalles de la huella. Los tamaños inferiores a 3 dejan demasiado sin borrar, y los superiores a 4 pierden demasiado detalle.
 %[text] 
 %[text] Después, se han combinado ambas operaciones en los dos órdenes posibles:  primero apertura y después cierre, y primero cierre y después apertura. Se han probado todas las combinaciones de apertura y cierre con discos de radios 3 y 4. Según los resultados, parece que queda mejor en general hacer primero apertura y después cierre.
-%[text] - En cierre y después apertura, las aperturas con r = 3 dejan puntos blancos sin eliminar. En las que tienen apertura de r=4 que limpian bien el fondo, close3 + open4 fragmenta las crestas, y close4 + open4 mantiene muy bien la continuidad pero engrosa las crestas. 
+%[text] - En cierre y después apertura, las aperturas con r = 3 dejan puntos blancos sin eliminar. En las que tienen apertura de r=4 que limpian bien el fondo, close3 + open4 fragmenta las crestas, y close4 + open4 mantiene muy bien la continuidad pero engrosa las crestas.
 %[text] - En apertura y después cierre, las aperturas con r = 3 también dejan algunos puntos en el fondo sin limpiar. Close4\_open3 y close4\_open4 son muy similares, aunque close4\_open3 deja algunos agujeros sin cerrar dentro de las crestas. \
 %[text] Por esto, la combinación elegida es apertura r = 4 seguida de cierre r = 4, que elimina todo el ruido, mantiene las crestas continuas y apenas modifica su grosor.
 %[text] 
@@ -381,7 +381,7 @@ fprintf('A mano: ¿bottom-hat(comp) = top-hat(original)? %d   píxeles distintos
 %[text] 
 %[text] Parte 2
 %[text] Al complementar la imagen, las estrellas pasan a ser oscuras sobre fondo claro. El white top-hat extrae estructuras claras pequeñas, así que ya no encuentra las estrellas. En su lugar extrae los trozos de fondo claro que quedan entre estrellas cercanas y que son menores que el disco, con lo que aparecen manchas redondas sin sentido. Para estructuras pequeñas más oscuras que su entorno, la operación adecuada es el bottom-hat (cierre - original): el cierre rellena las estrellas oscuras con el valor del fondo y, al restar la original, solo quedan ellas. 
-%[text] El resultado coincide con el top-hat de la imagen original. Las únicas diferencias aparecen en una franja estrecha junto a los bordes de la imagen, donde el disco se sale de la imagen y el resultado depende de cómo MATLAB trata los píxeles exteriores en cada operación. Hay diferencia ya que esos valores no respetan la relación g=255-original. Excluyendo esa franja, ambos resultados son idénticos.
+%[text] El resultado coincide con el top-hat de la imagen original. Las únicas diferencias aparecen en una franja estrecha junto a los bordes de la imagen, donde el disco se sale de la imagen y el resultado depende de cómo MATLAB trata los píxeles exteriores en cada operación. explicar mas!.  Excluyendo esa franja, ambos resultados son idénticos.
 %[text] 
 
 %[appendix]{"version":"1.0"}
