@@ -4,7 +4,7 @@
 %[text]{"align":"center"}  **Departamento de Electrónica. Universidad de Alcalá. SPAIN.**
 %[text] **Autor(es): Alejandro Fernández Ambrós, Cristina Martínez Toledo**
 %[text] 
-%[text] **Fecha:**
+%[text] **Fecha:** 14 de octubre de 2026
 %[text] 
 %[text] # Tema 2. Corrección de transformaciones geométricas. 
 %[text] Para corregir el efecto de las transformaciones geométricas debemos calcular la matriz que nos permite cambiar la posición de los píxeles de entrada y ubicarlos en las posiciones de salida correctas/no distorsionadas. En Matlab la función que utilizamos para ello es [`tform = estgeotform2d(matchedPoints1,matchedPoints2,transformType)`](https://www.mathworks.com/help/releases/R2023a/vision/ref/estgeotform2d.html?browser=F1help#d124e211773?browser=F1help)`,` que estima la matriz necesaria para hacer coincidir los `matchedPoints1` de la imagen de entrada con los `matchedPoints2` de la imagen de salida. En este ejercicio, le proporcionaremos nosotros como variable los valores de `matchedPoints2` donde deben ubicarse los píxeles de la imagen de salida después de la transformación. 

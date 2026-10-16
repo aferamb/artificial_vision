@@ -4,7 +4,7 @@
 %[text]{"align":"center"}  **Departamento de Electrónica. Universidad de Alcalá.**
 %[text]{"align":"center"} 
 %[text] **Autor(es): Alejandro Fernández Ambrós, Cristina Martínez Toledo**
-%[text] **Fecha:**
+%[text] **Fecha:** 14 de octubre de 2026
 %[text]{"align":"center"} 
 %[text] El objetivo principal de esta práctica es familiarizarse con los principales operadores morfológicos y analizar el efecto que producen el **tipo, la forma y el tamaño del elemento estructurante** sobre distintos tipos de imágenes.
 close all
@@ -247,9 +247,9 @@ subplot(2,2,4), imshow(open4_close4), title('Apertura + cierre'); %[output:8f00f
 %[text] Por esto, la combinación elegida es apertura r = 4 seguida de cierre r = 4, que elimina todo el ruido, mantiene las crestas continuas y apenas modifica su grosor.
 %[text] 
 
-% PARA NOSOTROS (borrar despues)!!!!! 
-% (copiado de mi amiga claudia para comprobar lo de la documentacion de strel)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Prueba adicional: discos aproximados y exactos
+% Comparamos el disco predeterminado de strel con el disco exacto para los radios usados al estudiar la huella.
+% Las dimensiones y los vecindarios muestran la forma efectiva de cada elemento estructurante.
 % Comprobación: ¿strel('disk', r) es un círculo exacto?
 
 radios = 1:5;
@@ -281,7 +281,7 @@ for k = 1:numel(radios) %[output:group:2dabc87a]
     imshow(strel('disk', r, 0).Neighborhood, 'InitialMagnification', 'fit');
     title(['disk ' num2str(r) ' (exacto)']);
 end %[output:group:2dabc87a]
-%[text] 
+%[text] La aproximación predeterminada coincide con el disco exacto para radios 1 y 2. A partir de radio 3 las vecindades difieren: con radio 3 se obtiene un cuadrado de 5 × 5 y con radio 4, un octágono de 7 × 7. Esta comparación ayuda a interpretar el tamaño efectivo del elemento utilizado al limpiar la huella.
 %%
 %[text] Se pide: 
 %[text] 1. Suponga que solo interesan las estrellas pequeñas y que se desea eliminar la contribución de la galaxia. Las estrellas presentan tamaños del orden de unos pocos píxeles (aproximadamente 2–6 píxeles de radio), mientras que la galaxia presenta dimensiones muy superiores. Pruebe distintos radios para un elemento estructurante en forma de disco y determine experimentalmente un tamaño que permita conservar las estrellas pequeñas y eliminar la galaxia.
@@ -372,7 +372,7 @@ fprintf('A mano: ¿bottom-hat(comp) = top-hat(original)? %d   píxeles distintos
 %[text] 
 %[text] Parte 2
 %[text] Al complementar la imagen, las estrellas pasan a ser oscuras sobre fondo claro. El white top-hat extrae estructuras claras pequeñas, así que ya no encuentra las estrellas. En su lugar extrae los trozos de fondo claro que quedan entre estrellas cercanas y que son menores que el disco, con lo que aparecen manchas redondas sin sentido. Para estructuras pequeñas más oscuras que su entorno, la operación adecuada es el bottom-hat (cierre - original): el cierre rellena las estrellas oscuras con el valor del fondo y, al restar la original, solo quedan ellas. 
-%[text] El resultado coincide con el top-hat de la imagen original. Las únicas diferencias aparecen en una franja estrecha junto a los bordes de la imagen, donde el disco se sale de la imagen y el resultado depende de cómo MATLAB trata los píxeles exteriores en cada operación. explicar mas!.  Excluyendo esa franja, ambos resultados son idénticos.
+%[text] En teoría, con el mismo disco, el bottom-hat de la imagen complementada equivale al top-hat de la original porque cierre y apertura son operaciones duales. Aquí la comparación completa devuelve 0 por los píxeles próximos al borde: imclose añade un margen antes del cierre, mientras que la dilatación y erosión hechas a mano no reproducen ese mismo tratamiento. La prueba manual con un disco exacto confirma la igualdad cuando ambas operaciones usan las mismas condiciones de borde; en el interior los resultados coinciden.
 %[text] 
 
 %[appendix]{"version":"1.0"}

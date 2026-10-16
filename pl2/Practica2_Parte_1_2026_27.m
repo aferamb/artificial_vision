@@ -4,7 +4,7 @@
 %[text] 
 %[text] **Autor(es): Alejandro Fernández Ambrós, Cristina Martínez Toledo**
 %[text] 
-%[text] **Fecha:**
+%[text] **Fecha:** 14 de octubre de 2026
 %[text] El objetivo de esta práctica es aplicar y analizar algunas de las técnicas básicas de procesamiento de imágenes estudiadas en teoría utilizando la **Image Processing Toolbox de MATLAB**. Se trabajará con transformaciones de intensidad, procesamiento basado en el histograma, transformaciones geométricas, interpolación, generación y reducción de ruido y filtrado espacial.
 %[text] En la mayoría de los ejercicios se utilizarán imágenes de intensidad (escala de grises). Cuando se trabaje con imágenes en color deberá tenerse en cuenta su representación y decidir, en función de la operación que se quiera realizar, si conviene procesar directamente la imagen RGB o trabajar sobre alguna de sus componentes. Para realizar los ejercicios pueden utilizarse inicialmente las imágenes disponibles en el Aula Virtual. También pueden utilizarse otras imágenes, siempre que cumplan las características requeridas en cada apartado: imagen RGB o indexada, de bajo contraste, oscura, etc. 
 %[text] Antes de procesar una imagen es importante comprobar tanto su **tipo de representación** —RGB, indexada, escala de grises o binaria— como su **clase de datos** (`uint8`, `uint16`, `single`, `double`, `logical`, etc.). La clase determina, entre otras cosas, el rango numérico de los niveles de intensidad y puede condicionar el comportamiento de algunas operaciones. Esto es especialmente importante cuando en los ejercicios no se indica qué conversión debe realizarse o cuando se utilizan imágenes diferentes a las inicialmente indicadas en el enunciado. Si una imagen no tiene la representación o clase de datos adecuados, algunas funciones pueden producir un error —indicando, en ocasiones, el tipo de datos esperado— o proporcionar un resultado inesperado. En cualquiera de los dos casos deberá comprobarse qué tipo de entrada espera la función y realizar, si es necesario, la conversión adecuada.
@@ -115,7 +115,7 @@ title('forest.tif con la paleta jet'); %[output:97d618e8]
 %[text] Como prueba adicional se ha modificado una única fila del mapa de color: la 252, correspondiente al índice 251. Al mostrar de nuevo X con la paleta modificada, todos los píxeles con ese índice cambian de color, sin modificar la matriz de índices. Al sustituir la paleta completa por jet(256), la estructura de la imagen se mantiene pero los colores cambian por completo. 
 %[text] 
 %[text] 
-%[text] MIRAR TREE.TIF. su paleta usa solo 128 colores de los 256 que podria contener por sus 8 bits, el resto a 0. cuando la pones en greyscale se ve mas oscura que la original pq solo usa ""niveles de gris"" bajos
+%[text] Como comparación, `trees.tif` es una imagen indexada que utiliza 128 colores, aunque sus índices se guardan con 8 bits y podrían representar hasta 256 valores. Si se muestra la matriz de índices sin su paleta, MATLAB interpreta esos números como niveles de gris; al concentrarse en valores bajos, la imagen parece más oscura que con su mapa de colores. Para convertirla correctamente a escala de grises hay que tener en cuenta la luminancia de los colores de la paleta, por ejemplo con `ind2gray`.
 %[text] 
 %%
 %[text] 2\. Convierta la imagen indexada anterior a escala de grises y denomine `Igris` a la imagen resultante. Sobre `Igris`:
@@ -226,7 +226,7 @@ subplot(2,3,6), imhist(Igamma2); %[output:792171a8]
 %[text] Si en su lugar ponemos 30-80, se ve muchísima saturación en toda la imagen (queda gran parte de la imagen blanco o negro)
 %[text] En el caso del contraste, el histograma se ensancha al aumentar contraste (quedando incluso pocas barras sueltas con huecos grandes entre ellas si sube mucho el contraste) y  se estrecha al disminuirlo.
 %[text] 
-%[text] contraste gamma-------------------------------------------------------------------------
+%[text] **Contraste lineal y corrección gamma.** La expansión de contraste anterior estira linealmente los niveles entre 10 y 100 hasta 0–255, pero convierte en 255 todos los valores superiores a 100; por eso mejora la separación de los tonos oscuros y satura parte de las luces. La gamma redistribuye los tonos sin fijar ese intervalo de recorte: γ = 0,5 aclara sobre todo las sombras y γ = 2 oscurece los tonos medios. Ambos cambios se ven en los histogramas, pero la gamma modifica de forma no lineal unas zonas de intensidad más que otras.
 %[text] 
 
 %% Apartado 2.2: umbralización
