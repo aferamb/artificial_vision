@@ -159,7 +159,7 @@ tablaConv = table((1:numObj)', [stats2.Area]', [stats2.ConvexArea]', [stats2.Sol
 % Se puede comprobar que Solidity o índice de convexidad = Area ./ AreaConvexa
 
 %% Apartados 3 y 4: envolvente convexa coloreada según Solidity (slider)
-umbralS = 0.91; %[control:slider:6f45]{"position":[11,15]}
+umbralS = 0.95; %[control:slider:6f45]{"position":[11,15]}
 figure %[output:2673c098]
 % Fondo gris y objetos de colores, para que se vea el contorno blanco
 imshow(label2rgb(L2, @jet, [.5 .5 .5])) %[output:2673c098]
@@ -202,10 +202,10 @@ title(['Magenta: convexo (Solidity >= ', num2str(umbralS), ')  Blanco: cóncavo'
 %   data: {"layout":"inline","rightPanelPercent":4.8}
 %---
 %[control:slider:61f8]
-%   data: {"defaultValue":0.5,"label":"Slider","max":1.1,"min":0.5,"run":"Section","runOn":"ValueChanging","step":0.01}
+%   data: {"defaultValue":0.85,"label":"umbralF","max":1.07,"min":0.66,"run":"Section","runOn":"ValueChanging","step":0.01}
 %---
 %[control:slider:6f45]
-%   data: {"defaultValue":0.7,"label":"umbralS","max":1,"min":0.7,"run":"Section","runOn":"ValueChanging","step":0.01}
+%   data: {"defaultValue":0.95,"label":"umbralS","max":1,"min":0.7,"run":"Section","runOn":"ValueChanging","step":0.01}
 %---
 %[output:74e89482]
 %   data: {"dataType":"image","outputData":{"dataUri":"data:image\/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAAoklEQVR4AezSywmAMBREUbEAFynMYlOaDWgqGPKGwRC4oqv3cTjJ2Vp7d\/vOY8OH0H8dGtJICwGuh8CJlpCOcoplSAucaAnpKKdYhrTAiZaQjnKKZUgLnGgJ6SnOQBPSAcSpFUhPMQWalkk\/vdvxl4W+7nu\/0HbiMbhMevzbfglt0xUHkS6C2e1I23TFQaSLYHY70jZdcRDpIpjdjrRNVxz8AAAA\/\/\/KHVRwAAAABklEQVQDADrHOaxs8JEXAAAAAElFTkSuQmCC","height":337,"width":560}}
