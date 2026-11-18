@@ -3,7 +3,7 @@
 %[text]{"align":"center"}  **Sira Palazuelos, Miguel Angel Garcia, Juan Manuel Miguel**
 %[text]{"align":"center"}  **Departamento de Electrónica. Universidad de Alcalá.**
 %[text] 
-%[text] **Nombre:**
+%[text] **Nombre: Alejandro Fernández Ambrós, Cristina Martínez Toledo**
 %[text] **Fecha:**
 %[text]{"align":"center"} # 
 %[text] # Tema 4. Ejercicio 4. Características locales y texturas
