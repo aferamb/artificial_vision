@@ -4,7 +4,7 @@
 %[text]{"align":"center"}  **Departamento de Electrónica. Universidad de Alcalá.**
 %[text] 
 %[text] **Nombre: Alejandro Fernández Ambrós, Cristina Martínez Toledo**
-%[text] **Fecha:**
+%[text] **Fecha: 20/11/2026**
 %[text]{"align":"center"} # 
 %[text] # Tema 4. Ejercicio 2. Transformada de Fourier
 %[text] El objetivo de la práctica es calcular la transformada de Fourier de los contornos exteriores de los objetos de una imagen y reconstruirlos utilizando únicamente una parte de sus componentes de baja frecuencia, analizando cómo influye el número de componentes utilizadas en la aproximación obtenida.
@@ -13,8 +13,8 @@
 %[text] Se pide: 
 %[text] 1. Complete el paso 4, utilizando la función **`fourier_transform(),`** proporcionada con este enunciado, para obtener la transformada de Fourier del contorno de cada uno de los objetos etiquetados.
 %[text] 2. Obtenga los contornos reconstruidos de los objetos etiquetados realizando la transformada inversa de Fourier con la función **fourier\_inv\_transform()**, también incluida con el enunciado. Consulte los comentarios de la función para realizar la reconstrucción utilizando aproximadamente el **10 %** del total de componentes. Dibuje cada contorno reconstruido sobre la figura original utilizando `hold on` y compruebe visualmente cómo se ajusta al contorno original.
-%[text] 3. Repita el proceso reduciendo el número de componentes utilizados para la reconstrucción al 5**%** del total**.**
-%[text] 4. Repita el proceso reduciendo el número de componentes utilizados para la reconstrucción al 2**%** del total
+%[text] 3. Repita el proceso reduciendo el número de componentes utilizados para la reconstrucción al 5\*\*% **del total**.\*\*
+%[text] 4. Repita el proceso reduciendo el número de componentes utilizados para la reconstrucción al 2\*\*%\*\* del total
 %[text] 5. Compare los resultados obtenidos con los tres porcentajes. Explique qué ocurre al reducir el número de componentes y relacione el resultado con la información representada por las componentes de baja y alta frecuencia. \
 %[text] 
 %[text] Step 1) Read Image

@@ -4,7 +4,7 @@
 %[text]{"align":"center"}  **Departamento de Electrónica. Universidad de Alcalá.**
 %[text] 
 %[text] **Nombre: Alejandro Fernández Ambrós, Cristina Martínez Toledo**
-%[text] **Fecha:**
+%[text] **Fecha: 20/11/2026**
 %[text]{"align":"center"} # 
 %[text] # Tema 4. Ejercicio 3. *Local Features*
 %[text] El objetivo de esta práctica es mostrar el potencial de las denominadas "*Local Features*". Para ello se va a buscar un objeto dentro de una escena utilizando los detectores y descriptores de características locales.

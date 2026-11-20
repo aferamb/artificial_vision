@@ -4,7 +4,7 @@
 %[text]{"align":"center"}  **Departamento de Electrónica. Universidad de Alcalá.**
 %[text] 
 %[text] **Nombre: Alejandro Fernández Ambrós, Cristina Martínez Toledo**
-%[text] **Fecha:**
+%[text] **Fecha: 20/11/2026**
 %[text]{"align":"center"} # 
 %[text] # Tema 4. Ejercicio 5. Texturas
 %[text] El objetivo de este ejercicio es la caracterización de texturas. Para ello, sobre imágenes con texturas diferentes, se obtendrán y compararán los valores de entropía, las matrices de coocurrencia en niveles de gris (GLCM) y diferentes estadísticas obtenidas a partir de las GLCM para diversos vectores de desplazamiento (*offset)*.
